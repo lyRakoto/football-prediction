@@ -1,6 +1,6 @@
 # football-prediction
 
-# Code portion about the cross validation with knn of the model , the best k = 20 gives an error rate of 19.98%
+# Code portion about the cross validation with knn of the model , the best k = 11 gives an error rate of 15.134% on the train dataset and 13.133% on the test dataset
 
 
 def cross_validation(train_x, train_y, untrained_classifier, k):
