@@ -237,7 +237,7 @@ def find_best_k(train_x, train_y, untrained_classifier_for_k):
 
 def main():
   #eval_classifier(read_data_input('dataset/inputTest'), read_data_output('dataset/outputTest'), get_value_knn)
-  #cross_validation(read_data_input('dataset/inputTrain'), read_data_output('dataset/outputTrain'), get_value_knn, 20)
+  #cross_validation(read_data_input('dataset/inputTrain'), read_data_output('dataset/outputTrain'), get_value_knn, 12)
   find_best_k(read_data_input('dataset/inputTrain'), read_data_output('dataset/outputTrain'), get_value_knn)
   #linear_regression(read_data_input('dataset/inputTrain'), read_data_output('dataset/outputTrain'),read_data_input('dataset/inputTest'), read_data_output('dataset/outputTest'))
 
