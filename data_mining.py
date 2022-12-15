@@ -234,6 +234,16 @@ def find_best_k(train_x, train_y, untrained_classifier_for_k):
   return error_ratios[0][0]
 
 
+def predict():
+  print("Your player's year : ")
+  player = input().split(',')
+  playerData = []
+  for data in player:
+    playerData.append(float(data))
+  verdict_classifier = get_value_knn(playerData, read_data_input('dataset/inputTrain'),  read_data_output('dataset/outputTrain'), simple_distance, 12)
+  print("At the end of the season, your player costs " + str(verdict_classifier))
+
+
 
 def main():
   #eval_classifier(read_data_input('dataset/inputTest'), read_data_output('dataset/outputTest'), get_value_knn)
@@ -245,4 +255,5 @@ def main():
 #split_lines_output("dataset/outputData", 1, "dataset/outputTrain", "dataset/outputTest")
 #read_data_input("dataset/inputTrain")
 #read_data_output("dataset/outputTrain")
-main()
+#main()
+predict()
