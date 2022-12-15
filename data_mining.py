@@ -82,41 +82,51 @@ def get_value_knn(x, train_x, train_y, dist_function, k):
   class3 = 0
   class4 = 0
   class5 = 0
+  tab1 = []
+  tab2 = []
+  tab3 = []
+  tab4 = []
+  tab5 = []
   maxValue = 0
-  max = -1
+  max = 0
   nearests = k_nearest_neighbors(x, train_x, dist_function, k)
   verdict_nearest = train_y[nearests[0]]
   for near in nearests:
     if(train_y[near] < 1.0):
       class1 = class1 + 1
+      tab1.append(train_y[near])
       if(maxValue < class1):
         maxValue = class1
-        max = near
+        max = np.mean(tab1)
     if(train_y[near] >= 1.0 and train_y[near] < 10.0):
       class2 = class2 + 1
+      tab2.append(train_y[near])
       if(maxValue < class2):
         maxValue = class2
-        max = near
+        max = np.mean(tab2)
     if(train_y[near] >= 10.0 and train_y[near] < 40.0):
       class3 = class3 + 1
+      tab3.append(train_y[near])
       if(maxValue < class3):
         maxValue = class3
-        max = near
+        max = np.mean(tab3)
     if(train_y[near] >= 40.0 and train_y[near] < 100.0):
       class4 = class4 + 1
+      tab4.append(train_y[near])
       if(maxValue < class4):
         maxValue = class4
-        max = near
+        max = np.mean(tab4)
     if(train_y[near] > 100.0):
       class5 = class5 + 1
+      tab5.append(train_y[near])
       if(maxValue < class5):
         maxValue = class5
-        max = near
-      
+        max = np.mean(tab5)
+    
   if(class1 == class2 == class3 == class4 == class5):
     return verdict_nearest
   else:
-    return train_y[max]
+    return max
 
 
 def compare_values(v1, v2):
